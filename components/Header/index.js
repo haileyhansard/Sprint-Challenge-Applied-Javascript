@@ -11,31 +11,66 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
+let headerContainer = document.querySelector(".header-container")
+
 function Header() {
-    const header = document.createElement("header-container");
-    const spanDate = document.createElement("date");
-    const h1 = document.createElement("h1");
-    const spanTemp = document.createElement("temp");
+    const div = document.createElement("div")
+    div.className = "header"
+
+    const span1 = document.createElement("span")
+    span1.className = "date"
+    span1.textContent = "MARCH 28, 2019"
+
+    const h1 = document.createElement("h1")
+    h1.textContent = "Lambda Times"
+
+    const span2 = document.createElement("span")
+    span2.className = "temp"
+    span2.textContent = "98°"
+
+    headerContainer.appendChild(div)
+    div.appendChild(span1)
+    div.appendChild(h1)
+    div.appendChild(span2)
+
+return div;
+}
+
+Header();
+console.log(headerContainer)
+
+
+//cannot figure out how to make this code work, but keeping here for reference:
+
+//     const headerContainer = document.querySelector(".header-container");
+//     const div = document.createElement("div");  
+//     const spanDate = document.createElement("span");
+//     const h1 = document.createElement("h1");
+//     const spanTemp = document.createElement("temp");
 
     
-    spanDate.textContent = "MARCH 28, 2019"
-    h1.textContent = "Lambda Times";
-    spanTemp.textContent = "98°"
+//     spanDate.textContent = "SMARCH 28, 2019"
+//     h1.textContent = "Lambda Times";
+//     spanTemp.textContent = "98°"
 
-    header.appendChild(spanDate);
-    header.appendChild(h1);
-    header.appendChild(spanTemp);
+//     headerContainer.appendChild(headerDiv);
+//     headerContainer.appendChild(spanDate);
+//     header.appendChild(h1);
+//     header.appendChild(spanTemp);
 
-return header;
-}
+// return headerDiv;
+// }
+
+// console.log(Header());
+
 //console.log(header)
 
-function addToDOM(){
-    const body = document.querySelector('body')
+// function addToDOM(){
+//     const body = document.querySelector('body')
 
-    const header = Header();
+//     const header = Header();
 
-    body.appendChild(header);
-}
+//     body.appendChild(header);
+// }
 
-addToDOM();
+// addToDOM();
