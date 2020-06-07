@@ -16,7 +16,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 //iterate over topics creating a new tab for each topic, and appending it to the DOM, under the div.topics element
 
 .then(response => {
-    console.log('response array', response)
+    console.log('response for topics tabs', response)
     
     response.data.topics.forEach(url => {
         const newTopicTab = document.createElement("div")
@@ -32,9 +32,10 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
     })
 })
 
-.catch(err => {
+.catch(error => {
     console.log('something is wrong')
 })
+
 
 
 
