@@ -17,18 +17,14 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
 
 .then(response => {
     console.log('response for topics tabs', response)
+    const newTab = document.querySelector(".topics")
     
     response.data.topics.forEach(url => {
         const newTopicTab = document.createElement("div")
         newTopicTab.className = "tab"
 
-        const newTab = document.querySelector(".tabs .topics")
-
-        newTab.appendChild(newTopicTab)
-
         newTopicTab.textContent = (url)
-
-        return newTab
+        newTab.appendChild(newTopicTab)
     })
 })
 

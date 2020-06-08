@@ -19,7 +19,7 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
-
+ ""
 //this is my attempt to make an article card for the Bootsrap category
 const newCardBootstrap = (article)=>{
 const newCard = document.createElement("div")
@@ -37,17 +37,21 @@ headline.classList.add("headline")
 authorDiv.classList.add("author")
 imgDiv.classList.add("img-container")
 
-newCard.appendChild(headline)
-newCard.appendChild(authorDiv)
 authorDiv.appendChild(imgDiv)
 authorDiv.appendChild(authorName)
 imgDiv.appendChild(img)
-
+newCard.appendChild(headline)
+newCard.appendChild(authorDiv)
 
 return newCard
+
+console.log(newCard)
 }
 
-console.log(newCardBootstrap);
+
+//console.log(article)
+//console.log(newCard)
+//console.log(newCardBootstrap)
 
 
 
@@ -61,7 +65,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     console.log('response for articles', response.data.articles.bootstrap)
 
     response.data.articles.bootstrap.forEach(article => {
-        const newCardBootsrap = card(article)
+        const newBootstrap = newCardBootstrap(article)
         entryPoint.appendChild(newCardBootstrap)
     })
 
@@ -85,10 +89,5 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 //     })
 
 // }    
-})
 
-.catch(error => {
-console.log("There is something wrong with the articles")
-})
 
-//cardMaker(url);
