@@ -20,7 +20,6 @@
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
 
-//this is my attempt to make an article card for the Bootsrap category
 
 //const entryPoint = document.querySelector('.cards-container')
 
@@ -45,22 +44,145 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
         const authorDiv = document.createElement("div")
         authorDiv.className = "author";
-        newCardContainer.appendChild(authorDiv);
+        newBootstrap.appendChild(authorDiv);
         
         const imgDiv = document.createElement("div")
         imgDiv.className = "img-container";
         authorDiv.appendChild(imgDiv);
 
         const img = document.createElement("img")
-        img.src = "";
+        img.src = url.authorPhoto;
         imgDiv.appendChild(img);
     
         const authorName = document.createElement("span")
         authorDiv.appendChild(authorName)
         authorName.textContent = url.authorName;
-        img.src = url.authorPhoto;
         headline.textContent = url.headline;
-   
+    })
+
+    response.data.articles.javascript.forEach(url => {
+        const newCardContainer = document.querySelector(".cards-container")
+        console.log(newCardContainer)
+    
+        const newJavascript = document.createElement("div")
+        newJavascript.className = "card";
+        newCardContainer.appendChild(newJavascript);
+
+        const headline = document.createElement("div")
+        headline.className = "headline";
+        headline.textContent = (url);
+        newJavascript.appendChild(headline);
+
+        const authorDiv = document.createElement("div")
+        authorDiv.className = "author";
+        newJavascript.appendChild(authorDiv);
+        
+        const imgDiv = document.createElement("div")
+        imgDiv.className = "img-container";
+        authorDiv.appendChild(imgDiv);
+
+        const img = document.createElement("img")
+        img.src = url.authorPhoto;
+        imgDiv.appendChild(img);
+    
+        const authorName = document.createElement("span")
+        authorDiv.appendChild(authorName)
+        authorName.textContent = url.authorName;
+        
+        headline.textContent = url.headline;
+    })
+
+    response.data.articles.jquery.forEach(url => {
+        const newCardContainer = document.querySelector(".cards-container")
+        console.log(newCardContainer)
+    
+        const newJquery = document.createElement("div")
+        newJquery.className = "card";
+        newCardContainer.appendChild(newJquery);
+
+        const headline = document.createElement("div")
+        headline.className = "headline";
+        headline.textContent = (url);
+        newJquery.appendChild(headline);
+
+        const authorDiv = document.createElement("div")
+        authorDiv.className = "author";
+        newJquery.appendChild(authorDiv);
+        
+        const imgDiv = document.createElement("div")
+        imgDiv.className = "img-container";
+        authorDiv.appendChild(imgDiv);
+
+        const img = document.createElement("img")
+        img.src = url.authorPhoto;
+        imgDiv.appendChild(img);
+    
+        const authorName = document.createElement("span")
+        authorDiv.appendChild(authorName)
+        authorName.textContent = url.authorName;
+        headline.textContent = url.headline;
+    })
+
+    response.data.articles.node.forEach(url => {
+        const newCardContainer = document.querySelector(".cards-container")
+        console.log(newCardContainer)
+    
+        const newNode = document.createElement("div")
+        newNode.className = "card";
+        newCardContainer.appendChild(newNode);
+
+        const headline = document.createElement("div")
+        headline.className = "headline";
+        headline.textContent = (url);
+        newNode.appendChild(headline);
+
+        const authorDiv = document.createElement("div")
+        authorDiv.className = "author";
+        newNode.appendChild(authorDiv);
+        
+        const imgDiv = document.createElement("div")
+        imgDiv.className = "img-container";
+        authorDiv.appendChild(imgDiv);
+
+        const img = document.createElement("img")
+        img.src = url.authorPhoto;
+        imgDiv.appendChild(img);
+    
+        const authorName = document.createElement("span")
+        authorDiv.appendChild(authorName)
+        authorName.textContent = url.authorName;
+        headline.textContent = url.headline;
+    })
+
+response.data.articles.technology.forEach(url => {
+        const newCardContainer = document.querySelector(".cards-container")
+        console.log(newCardContainer)
+    
+        const newTechnology = document.createElement("div")
+        newTechnology.className = "card";
+        newCardContainer.appendChild(newTechnology);
+
+        const headline = document.createElement("div")
+        headline.className = "headline";
+        headline.textContent = (url);
+        newTechnology.appendChild(headline);
+
+        const authorDiv = document.createElement("div")
+        authorDiv.className = "author";
+        newTechnology.appendChild(authorDiv);
+        
+        const imgDiv = document.createElement("div")
+        imgDiv.className = "img-container";
+        authorDiv.appendChild(imgDiv);
+
+        const img = document.createElement("img")
+        img.src = url.authorPhoto;
+        imgDiv.appendChild(img);
+    
+        const authorName = document.createElement("span")
+        authorDiv.appendChild(authorName)
+        authorName.textContent = url.authorName;
+        headline.textContent = url.headline;
     })
 })
 
