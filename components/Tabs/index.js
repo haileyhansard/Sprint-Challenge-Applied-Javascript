@@ -26,12 +26,12 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
         newTopicTab.textContent = (url)
         newTab.appendChild(newTopicTab)
     })
+console.log(newTab)    
 })
 
 .catch(error => {
-    console.log('something is wrong')
+    console.log('something is wrong', error)
 })
-
 
 
 

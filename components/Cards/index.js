@@ -19,75 +19,55 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
- ""
+
 //this is my attempt to make an article card for the Bootsrap category
-const newCardBootstrap = (article)=>{
-const newCard = document.createElement("div")
-const headline = document.createElement("div")
-const authorDiv = document.createElement("div")
-const imgDiv = document.createElement("div")
-const img = document.createElement("img")
-const authorName = document.createElement("span")
 
-headline.textContent = response.data.articles.bootstrap
-img.src = article
-
-newCard.classList.add("card")
-headline.classList.add("headline")
-authorDiv.classList.add("author")
-imgDiv.classList.add("img-container")
-
-authorDiv.appendChild(imgDiv)
-authorDiv.appendChild(authorName)
-imgDiv.appendChild(img)
-newCard.appendChild(headline)
-newCard.appendChild(authorDiv)
-
-return newCard
-
-console.log(newCard)
-}
-
-
-//console.log(article)
-//console.log(newCard)
-//console.log(newCardBootstrap)
-
-
-
-
-const entryPoint = document.querySelector('.cards-container')
+//const entryPoint = document.querySelector('.cards-container')
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
    
 
 .then(response => {
-    console.log('response for articles', response.data.articles.bootstrap)
+    console.log('response for articles', response)
 
-    response.data.articles.bootstrap.forEach(article => {
-        const newBootstrap = newCardBootstrap(article)
-        entryPoint.appendChild(newCardBootstrap)
+    response.data.articles.bootstrap.forEach(url => {
+        const newCardContainer = document.querySelector(".cards-container")
+        console.log(newCardContainer)
+    
+        const newBootstrap = document.createElement("div")
+        newBootstrap.className = "card";
+        newCardContainer.appendChild(newBootstrap);
+
+        const headline = document.createElement("div")
+        headline.className = "headline";
+        headline.textContent = (url);
+        newBootstrap.appendChild(headline);
+
+        const authorDiv = document.createElement("div")
+        authorDiv.className = "author";
+        newCardContainer.appendChild(authorDiv);
+        
+        const imgDiv = document.createElement("div")
+        imgDiv.className = "img-container";
+        authorDiv.appendChild(imgDiv);
+
+        const img = document.createElement("img")
+        img.src = "";
+        imgDiv.appendChild(img);
+    
+        const authorName = document.createElement("span")
+        authorDiv.appendChild(authorName)
+        authorName.textContent = url.authorName;
+        img.src = url.authorPhoto;
+        headline.textContent = url.headline;
+   
     })
+})
+
+.catch(error => {
+    console.log("Something is wrong with the article cards", error)
+})
+
 
 // function cardMaker(url){
-//     // const newCard = document.createElement("div")
-//     // const headline = document.createElement("div2")
-//     // const authorDiv = document.createElement("div3")
-//     // const imgDiv = document.createElement("div4")
-//     // const img = document.createElement("img")
-//     // const authorName = document.createElement("span")
-
-//     response.data.articles.bootstrap.forEach(item => {
-//         const newCard = document.createElement("div")
-//         const headline = document.createElement("div2")
-//         const authorDiv = document.createElement("div3")
-//         const imgDiv = document.createElement("div4")
-//         const img = document.createElement("img")
-//         const authorName = document.createElement("span")
-//         headline.textContent = (item);
-
 //     })
-
-// }    
-
-
